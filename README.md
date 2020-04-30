@@ -1,6 +1,6 @@
 # lottery_task
 
-Creates .json file with data from current web-resource
+Creates .csv file with data from current web-resource
 
 To Run Programm: 
 -

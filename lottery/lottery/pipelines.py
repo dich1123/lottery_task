@@ -4,13 +4,13 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-from scrapy.exporters import JsonItemExporter
+from scrapy.exporters import CsvItemExporter
 
 
 class LotteryPipeline:
     def __init__(self):
-        self.file = open("parsed_data.json", 'wb')
-        self.exporter = JsonItemExporter(self.file, encoding='utf-8', ensure_ascii=False)
+        self.file = open("parsed_data.csv", 'wb')
+        self.exporter = CsvItemExporter(self.file, include_headers_line=True, join_multivalued=',')
         self.exporter.start_exporting()
 
     def close_spider(self, spider):
